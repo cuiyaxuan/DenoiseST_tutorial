@@ -5,5 +5,9 @@ build:
   tools:
     python: "3.9"
 
+python:
+  install:
+    - requirements: source/requirements.txt
+
 sphinx:
   configuration: source/conf.py
