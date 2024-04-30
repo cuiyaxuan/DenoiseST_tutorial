@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Identify Spatial Domain &mdash; DenoiseST 1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/documentation_options.js?v=29a6c3e3"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tutorial 1: 10X Visium DLPFC dataset" href="1_Example_lowresolve_test.html" />
+    <link rel="prev" title="Welcome to DenoiseST’s documentation!" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            DenoiseST
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Identify Spatial Domain</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_Example_lowresolve_test.html">Tutorial 1: 10X Visium DLPFC dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_Example_BreastSlice_test.html">Tutorial 2: 10X Visium Breast dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_Example_DenoiseST_highresolve_test.html">Tutorial 3: Slide-seq or Stereo-seq dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_Example_VisiumHD_test.html">Tutorial 4: VisiumHD dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Example_Identify_FVGs.html">Tutorial 5: Identifying FVGs in 10X Visium DLPFC dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">about</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DenoiseST</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Identify Spatial Domain</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Identify Spatial Domain/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="identify-spatial-domain">
+<h1>Identify Spatial Domain<a class="headerlink" href="#identify-spatial-domain" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="1_Example_lowresolve_test.html">Tutorial 1: 10X Visium DLPFC dataset</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_Example_lowresolve_test.html#in-this-tutorial-we-show-how-to-apply-denoisest-to-identify-spatial-domains-on-10x-visium-data-as-a-example-we-analyse-the-151672-sample-of-the-dorsolateral-prefrontal-cortex-dlpfc-dataset">In this tutorial, we show how to apply DenoiseST to identify spatial domains on 10X Visium data. As a example, we analyse the 151672 sample of the dorsolateral prefrontal cortex (DLPFC) dataset.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_Example_lowresolve_test.html#the-source-code-package-is-freely-available-at-https-github-com-cuiyaxuan-denoisest-tree-master-the-datasets-used-in-this-study-can-be-found-at-https-drive-google-com-drive-folders-1h-ymfcqldr1wpmrx-bcewajg5norif51-usp-sharing">The source code package is freely available at https://github.com/cuiyaxuan/DenoiseST/tree/master. The datasets used in this study can be found at https://drive.google.com/drive/folders/1H-ymfCqlDR1wpMRX-bCewAjG5nOrIF51?usp=sharing.</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="2_Example_BreastSlice_test.html">Tutorial 2: 10X Visium Breast dataset</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="2_Example_BreastSlice_test.html#in-this-tutorial-we-show-how-to-apply-denoisest-to-identify-spatial-domains-on-10x-visium-data-as-a-example-we-analyse-the-breast-dataset">In this tutorial, we show how to apply DenoiseST to identify spatial domains on 10X Visium data. As a example, we analyse the Breast dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_Example_BreastSlice_test.html#the-source-code-package-is-freely-available-at-https-github-com-cuiyaxuan-denoisest-tree-master-the-datasets-used-in-this-study-can-be-found-at-https-drive-google-com-drive-folders-1h-ymfcqldr1wpmrx-bcewajg5norif51-usp-sharing">The source code package is freely available at https://github.com/cuiyaxuan/DenoiseST/tree/master. The datasets used in this study can be found at https://drive.google.com/drive/folders/1H-ymfCqlDR1wpMRX-bCewAjG5nOrIF51?usp=sharing.</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="3_Example_DenoiseST_highresolve_test.html">Tutorial 3: Slide-seq or Stereo-seq dataset</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="3_Example_DenoiseST_highresolve_test.html#in-this-tutorial-we-show-how-to-apply-denoisest-to-identify-spatial-domains-on-slide-seq-or-stereo-seq-as-a-example-we-analyse-the-stereo-dataset">In this tutorial, we show how to apply DenoiseST to identify spatial domains on Slide-seq or Stereo-seq. As a example, we analyse the Stereo dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_Example_DenoiseST_highresolve_test.html#the-source-code-package-is-freely-available-at-https-github-com-cuiyaxuan-denoisest-tree-master-the-datasets-used-in-this-study-can-be-found-at-https-drive-google-com-drive-folders-1h-ymfcqldr1wpmrx-bcewajg5norif51-usp-sharing-the-details-of-data-description-are-shown-in-supplementary-note-s1">The source code package is freely available at https://github.com/cuiyaxuan/DenoiseST/tree/master. The datasets used in this study can be found at https://drive.google.com/drive/folders/1H-ymfCqlDR1wpMRX-bCewAjG5nOrIF51?usp=sharing. The details of data description are shown in Supplementary Note S1.</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="4_Example_VisiumHD_test.html">Tutorial 4: VisiumHD dataset</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="4_Example_VisiumHD_test.html#in-this-tutorial-we-show-how-to-apply-denoisest-to-identify-spatial-domains-on-visiumhd-dataset-as-a-example-we-analyse-the-visiumhd-dataset">In this tutorial, we show how to apply DenoiseST to identify spatial domains on VisiumHD dataset. As a example, we analyse the VisiumHD dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_Example_VisiumHD_test.html#the-source-code-package-is-freely-available-at-https-github-com-cuiyaxuan-denoisest-tree-master-the-datasets-used-in-this-study-can-be-found-at-https-drive-google-com-drive-folders-1h-ymfcqldr1wpmrx-bcewajg5norif51-usp-sharing">The source code package is freely available at https://github.com/cuiyaxuan/DenoiseST/tree/master. The datasets used in this study can be found at https://drive.google.com/drive/folders/1H-ymfCqlDR1wpMRX-bCewAjG5nOrIF51?usp=sharing.</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="5_Example_Identify_FVGs.html">Tutorial 5: Identifying FVGs in 10X Visium DLPFC dataset</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="5_Example_Identify_FVGs.html#in-this-tutorial-we-show-how-to-apply-denoisest-to-identify-fvgs-on-10x-visium-dlpfc-dataset-as-a-example-we-analyse-the-visium-dataset">In this tutorial, we show how to apply DenoiseST to identify FVGs on 10X Visium DLPFC dataset. As a example, we analyse the Visium dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Example_Identify_FVGs.html#the-source-code-package-is-freely-available-at-https-github-com-cuiyaxuan-denoisest-tree-master-the-datasets-used-in-this-study-can-be-found-at-https-drive-google-com-drive-folders-1h-ymfcqldr1wpmrx-bcewajg5norif51-usp-sharing">The source code package is freely available at https://github.com/cuiyaxuan/DenoiseST/tree/master. The datasets used in this study can be found at https://drive.google.com/drive/folders/1H-ymfCqlDR1wpMRX-bCewAjG5nOrIF51?usp=sharing.</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to DenoiseST’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="1_Example_lowresolve_test.html" class="btn btn-neutral float-right" title="Tutorial 1: 10X Visium DLPFC dataset" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Cui Yaxuan.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

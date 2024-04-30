@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutorial 4: VisiumHD dataset &mdash; DenoiseST 1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/documentation_options.js?v=29a6c3e3"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tutorial 5: Identifying FVGs in 10X Visium DLPFC dataset" href="5_Example_Identify_FVGs.html" />
+    <link rel="prev" title="Tutorial 3: Slide-seq or Stereo-seq dataset" href="3_Example_DenoiseST_highresolve_test.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            DenoiseST
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Identify Spatial Domain</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1_Example_lowresolve_test.html">Tutorial 1: 10X Visium DLPFC dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_Example_BreastSlice_test.html">Tutorial 2: 10X Visium Breast dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_Example_DenoiseST_highresolve_test.html">Tutorial 3: Slide-seq or Stereo-seq dataset</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Tutorial 4: VisiumHD dataset</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#in-this-tutorial-we-show-how-to-apply-denoisest-to-identify-spatial-domains-on-visiumhd-dataset-as-a-example-we-analyse-the-visiumhd-dataset">In this tutorial, we show how to apply DenoiseST to identify spatial domains on VisiumHD dataset. As a example, we analyse the VisiumHD dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-source-code-package-is-freely-available-at-https-github-com-cuiyaxuan-denoisest-tree-master-the-datasets-used-in-this-study-can-be-found-at-https-drive-google-com-drive-folders-1h-ymfcqldr1wpmrx-bcewajg5norif51-usp-sharing">The source code package is freely available at https://github.com/cuiyaxuan/DenoiseST/tree/master. The datasets used in this study can be found at https://drive.google.com/drive/folders/1H-ymfCqlDR1wpMRX-bCewAjG5nOrIF51?usp=sharing.</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="5_Example_Identify_FVGs.html">Tutorial 5: Identifying FVGs in 10X Visium DLPFC dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">about</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DenoiseST</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Identify Spatial Domain</a></li>
+      <li class="breadcrumb-item active">Tutorial 4: VisiumHD dataset</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Identify Spatial Domain/4_Example_VisiumHD_test.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tutorial-4-visiumhd-dataset">
+<h1>Tutorial 4: VisiumHD dataset<a class="headerlink" href="#tutorial-4-visiumhd-dataset" title="Link to this heading">¶</a></h1>
+<section id="in-this-tutorial-we-show-how-to-apply-denoisest-to-identify-spatial-domains-on-visiumhd-dataset-as-a-example-we-analyse-the-visiumhd-dataset">
+<h2>In this tutorial, we show how to apply DenoiseST to identify spatial domains on VisiumHD dataset. As a example, we analyse the VisiumHD dataset<a class="headerlink" href="#in-this-tutorial-we-show-how-to-apply-denoisest-to-identify-spatial-domains-on-visiumhd-dataset-as-a-example-we-analyse-the-visiumhd-dataset" title="Link to this heading">¶</a></h2>
+</section>
+<section id="the-source-code-package-is-freely-available-at-https-github-com-cuiyaxuan-denoisest-tree-master-the-datasets-used-in-this-study-can-be-found-at-https-drive-google-com-drive-folders-1h-ymfcqldr1wpmrx-bcewajg5norif51-usp-sharing">
+<h2>The source code package is freely available at <a class="reference external" href="https://github.com/cuiyaxuan/DenoiseST/tree/master">https://github.com/cuiyaxuan/DenoiseST/tree/master</a>. The datasets used in this study can be found at <a class="reference external" href="https://drive.google.com/drive/folders/1H-ymfCqlDR1wpMRX-bCewAjG5nOrIF51?usp=sharing">https://drive.google.com/drive/folders/1H-ymfCqlDR1wpMRX-bCewAjG5nOrIF51?usp=sharing</a>.<a class="headerlink" href="#the-source-code-package-is-freely-available-at-https-github-com-cuiyaxuan-denoisest-tree-master-the-datasets-used-in-this-study-can-be-found-at-https-drive-google-com-drive-folders-1h-ymfcqldr1wpmrx-bcewajg5norif51-usp-sharing" title="Link to this heading">¶</a></h2>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">DenoiseST_HD</span> <span class="kn">import</span> <span class="n">DenoiseST</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">scanpy</span> <span class="k">as</span> <span class="nn">sc</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
+<span class="kn">import</span> <span class="nn">multiprocessing</span> <span class="k">as</span> <span class="nn">mp</span>
+
+<span class="k">def</span> <span class="nf">setup_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">41</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">torch</span>
+    <span class="kn">import</span> <span class="nn">os</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+    <span class="kn">import</span> <span class="nn">random</span>
+    <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>  <span class="c1"># Numpy module.</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>  <span class="c1"># Python random module.</span>
+    <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">():</span>
+        <span class="c1"># torch.backends.cudnn.benchmark = False</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">cudnn</span><span class="o">.</span><span class="n">deterministic</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">manual_seed_all</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+        <span class="c1">#os.environ[&#39;PYTHONHASHSEED&#39;] = str(seed)</span>
+
+<span class="n">setup_seed</span><span class="p">(</span><span class="mi">41</span><span class="p">)</span>
+
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+<span class="c1"># call 24 cpu cores</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">set_num_threads</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>
+
+
+<span class="n">n_clusters</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1">###### the number of spatial domains.</span>
+<span class="n">file_fold</span> <span class="o">=</span> <span class="s1">&#39;/home/cuiyaxuan/spatialLIBD/square_016um/&#39;</span> <span class="c1">#### to your path</span>
+<span class="n">adata</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">read_visium</span><span class="p">(</span><span class="n">file_fold</span><span class="p">,</span> <span class="n">count_file</span><span class="o">=</span><span class="s1">&#39;filtered_feature_bc_matrix.h5&#39;</span><span class="p">,</span> <span class="n">load_images</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#### project name</span>
+<span class="n">adata</span><span class="o">.</span><span class="n">var_names_make_unique</span><span class="p">()</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">DenoiseST</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span><span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span><span class="n">n_top_genes</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+<span class="n">adata</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">tool</span> <span class="o">=</span> <span class="s1">&#39;mclust&#39;</span> <span class="c1"># mclust, leiden, and louvain</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">clustering</span>
+
+<span class="k">if</span> <span class="n">tool</span> <span class="o">==</span> <span class="s1">&#39;mclust&#39;</span><span class="p">:</span>
+   <span class="n">clustering</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">n_clusters</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">radius</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">tool</span><span class="p">,</span> <span class="n">refinement</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">tool</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;leiden&#39;</span><span class="p">,</span> <span class="s1">&#39;louvain&#39;</span><span class="p">]:</span>
+   <span class="n">clustering</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">n_clusters</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">radius</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">tool</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">increment</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">refinement</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">adata</span><span class="o">.</span><span class="n">obs</span><span class="p">[</span><span class="s1">&#39;domain&#39;</span><span class="p">]</span>
+<span class="n">adata</span><span class="o">.</span><span class="n">obs</span><span class="p">[</span><span class="s1">&#39;domain&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;label.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<pre class="literal-block">/home/cuiyaxuan/anaconda3/envs/pytorch/lib/python3.8/site-packages/tqdm/auto.py:22: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm
+/home/cuiyaxuan/anaconda3/envs/pytorch/lib/python3.8/site-packages/anndata/_core/anndata.py:1830: UserWarning: Variable names are not unique. To make them unique, call <cite>.var_names_make_unique</cite>.
+  utils.warn_names_duplicates(&quot;var&quot;)
+/home/cuiyaxuan/anaconda3/envs/pytorch/lib/python3.8/site-packages/scanpy/readwrite.py:413: DtypeWarning: Columns (1,2,3,4,5) have mixed types. Specify dtype option on import or set low_memory=False.
+  positions = pd.read_csv(files['tissue_positions_file'], header=None)</pre>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="3_Example_DenoiseST_highresolve_test.html" class="btn btn-neutral float-left" title="Tutorial 3: Slide-seq or Stereo-seq dataset" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="5_Example_Identify_FVGs.html" class="btn btn-neutral float-right" title="Tutorial 5: Identifying FVGs in 10X Visium DLPFC dataset" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Cui Yaxuan.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
